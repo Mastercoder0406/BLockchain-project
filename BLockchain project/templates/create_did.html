@@ -1,0 +1,10 @@
+<h2>Create DID</h2>
+
+<form method="post">
+    <button type="submit">Generate DID</button>
+</form>
+
+{% if did %}
+<p><b>DID:</b> {{ did }}</p>
+<p><b>Private Key:</b> {{ private_key }}</p>
+{% endif %}

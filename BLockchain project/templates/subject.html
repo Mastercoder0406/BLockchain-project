@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card hero-card">
+  <div class="card-body p-4">
+    <h2 class="page-title">Subject Identity</h2>
+    <p class="text-muted">
+      This identity belongs to the user whose KYC will be issued.
+    </p>
+
+    <form method="post" class="mb-4">
+      <button type="submit" class="btn btn-secondary">Generate Subject DID</button>
+    </form>
+
+    {% if created %}
+      <div class="alert alert-success">
+        Subject DID created successfully. Copy the private key now.
+      </div>
+      <h5>Latest Subject</h5>
+      <pre>{{ created | tojson(indent=2) if created else "" }}</pre>
+    {% endif %}
+
+    <hr>
+    <h5 class="mb-3">All Subject Identities</h5>
+    {% if subjects and subjects|length > 0 %}
+      {% for item in subjects %}
+        <div class="border rounded-3 p-3 mb-3 bg-light">
+          <strong>DID:</strong> {{ item.did }}<br>
+          <strong>Public Key:</strong> {{ item.public_key }}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-muted">No subject identities created yet.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

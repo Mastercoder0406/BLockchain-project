@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="p-4 p-md-5 bg-white hero-card mb-4">
+  <h1 class="page-title mb-2">Decentralized Digital KYC System</h1>
+  <p class="text-muted mb-4">
+    Issuer and subject are handled as separate roles to keep the workflow clear.
+  </p>
+
+  <div class="mb-3">
+    <span class="step-badge">1. Create Issuer</span>
+    <span class="step-badge">2. Create Subject</span>
+    <span class="step-badge">3. Issue KYC</span>
+    <span class="step-badge">4. Verify KYC</span>
+    <span class="step-badge">5. Revoke if needed</span>
+  </div>
+
+  <div class="row g-3 mt-3">
+    <div class="col-md-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5>Issuer</h5>
+          <p class="text-muted">Organization or bank that signs KYC.</p>
+          <a href="/issuer" class="btn btn-dark w-100">Open Issuer Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5>Subject</h5>
+          <p class="text-muted">User or customer whose KYC is issued.</p>
+          <a href="/subject" class="btn btn-secondary w-100">Open Subject Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5>Issue KYC</h5>
+          <p class="text-muted">Create a signed KYC credential.</p>
+          <a href="/issue_kyc" class="btn btn-primary w-100">Issue Credential</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5>Verify KYC</h5>
+          <p class="text-muted">Check if the credential is valid.</p>
+          <a href="/verify_kyc" class="btn btn-success w-100">Verify Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-3">
+    <div class="card hero-card">
+      <div class="card-body">
+        <h5>Issuer count</h5>
+        <p class="display-6 mb-0">{{ issuer_count }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card hero-card">
+      <div class="card-body">
+        <h5>Subject count</h5>
+        <p class="display-6 mb-0">{{ subject_count }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card hero-card">
+      <div class="card-body">
+        <h5>Credentials issued</h5>
+        <p class="display-6 mb-0">{{ credential_count }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card hero-card">
+      <div class="card-body">
+        <h5>Revoked</h5>
+        <p class="display-6 mb-0">{{ revoked_count }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

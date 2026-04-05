@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card hero-card">
+  <div class="card-body p-4">
+    <h2 class="page-title">Verify KYC</h2>
+    <p class="text-muted">
+      Paste the credential JSON and issuer public key to verify whether the KYC is authentic.
+    </p>
+
+    <div class="alert alert-warning">
+      Paste the full issued credential including the proof section.
+    </div>
+
+    {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" class="row g-3">
+      <div class="col-12">
+        <label class="form-label">Issuer Public Key</label>
+        <input type="text" name="public_key" class="form-control" required>
+      </div>
+
+      <div class="col-12">
+        <label class="form-label">Credential JSON</label>
+        <textarea name="vc" rows="12" class="form-control" required></textarea>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-success">Verify KYC</button>
+      </div>
+    </form>
+
+    {% if result %}
+      <hr>
+      <div class="alert alert-info mt-3">{{ result }}</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
