@@ -232,7 +232,7 @@ def issue_kyc_ui():
     if request.method == "POST":
         issuer_did = request.form["issuer_did"]
         subject_did = request.form["subject_did"]
-        private_key = request.form["private_key"]
+        private_key = request.form["issuer_private_key"]
 
         claims = {
             "name": request.form["name"],
