@@ -1,0 +1,86 @@
+{
+  "did": "did:lab:e2305f6997d39fdfaf65f3c2",
+  "document": {
+    "created": "2026-04-19T16:56:46Z",
+    "id": "did:lab:e2305f6997d39fdfaf65f3c2",
+    "verificationMethod": [
+      {
+        "controller": "did:lab:e2305f6997d39fdfaf65f3c2",
+        "id": "did:lab:e2305f6997d39fdfaf65f3c2#key-1",
+        "publicKeyBase64": "X4QC+FG/HMHGS6jUK/+ScoAF9Op/KzbXo/O5l6geyDc=",
+        "type": "Ed25519VerificationKey2020"
+      }
+    ]
+  },
+  "ethereum": {
+    "block": 5,
+    "gas_used": 594650,
+    "tx_hash": "2ab45ae1ebdc8f12f906ebd85051add90a9f4a75456a58faa81530a1cd99708b"
+  },
+  "private_key": "TBDm6+zszOsdWhy2FAPWViVO4O8dX4Rq5qIG2NBwQX4=",
+  "public_key": "X4QC+FG/HMHGS6jUK/+ScoAF9Op/KzbXo/O5l6geyDc=",
+  "role": "issuer"
+}
+
+
+
+
+
+{
+    "did": "did:lab:f1c16ad8fcac39d9930b14a8",
+    "document": {
+        "created": "2026-04-19T16:57:47Z",
+        "id": "did:lab:f1c16ad8fcac39d9930b14a8",
+        "verificationMethod": [
+            {
+                "controller": "did:lab:f1c16ad8fcac39d9930b14a8",
+                "id": "did:lab:f1c16ad8fcac39d9930b14a8#key-1",
+                "publicKeyBase64": "tCXXquM8RJAC9HA7a0nHz8no8RZprytafMwZj/7E62U=",
+                "type": "Ed25519VerificationKey2020"
+            }
+        ]
+    },
+    "ethereum": {
+        "block": 6,
+        "gas_used": 540870,
+        "tx_hash": "ceb4c1de6d7aaa253e7fa8435f3a536c55c6630282423f0125303e2ff9263f6f"
+    },
+    "private_key": "d2iF/6CyhKF63uQbhAwMIij5SYeWfBH0Yb67dlvtROo=",
+    "public_key": "tCXXquM8RJAC9HA7a0nHz8no8RZprytafMwZj/7E62U=",
+    "role": "subject"
+}
+
+
+
+
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "type": [
+        "VerifiableCredential",
+        "KYC"
+    ],
+    "issuer": "did:lab:e2305f6997d39fdfaf65f3c2",
+    "issuanceDate": "2026-04-19T16:59:18Z",
+    "credentialSubject": {
+        "id": "did:lab:f1c16ad8fcac39d9930b14a8",
+        "kyc": {
+            "name": "d2iF/6CyhKF63uQbhAwMIij5SYeWfBH0Yb67dlvtROo=",
+            "dob": "15-06-2004",
+            "aadhaar": "475329075978",
+            "pan": "APZSD123"
+        }
+    },
+    "credentialId": "06a826982cbf0aa0db2ba0e1fe1e8b2f06dd6119fe38e4469eb3a5f3e1a19fe5",
+    "proof": {
+        "type": "Ed25519Signature2020",
+        "verificationMethod": "did:lab:e2305f6997d39fdfaf65f3c2#key-1",
+        "signature": "nIgG8HT7mM6r3Bl9kw4DCIVchsWe9OsY3YPkXjPXxoBXR356a09Cv4Qiz9EY9h3s+VBOIzw72RchxACLcxWNAw=="
+    },
+    "ethereum": {
+        "tx_hash": "66b6e4d4369a70899c67a3a42c0115dbf4b55f96d21032e6c6ac2fef86b7a8dc",
+        "block": 7,
+        "credential_hash": "9c94b6b256ad26b238185150e41f7e9e748fd2ddbef7c0f21abf32eb56d0032e"
+    }
+}

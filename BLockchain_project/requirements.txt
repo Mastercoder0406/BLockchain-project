@@ -1,0 +1,8 @@
+# Core
+flask>=3.0.0
+pymongo>=4.6.0
+cryptography>=42.0.0
+python-dotenv>=1.0.0
+
+# Ethereum
+web3>=7.0.0
